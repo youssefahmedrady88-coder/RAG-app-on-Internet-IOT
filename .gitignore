@@ -1,0 +1,12 @@
+# Vector database — auto-generated, do not commit
+chroma_db/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# OS
+.DS_Store
+Thumbs.db

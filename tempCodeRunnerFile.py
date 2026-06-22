@@ -1,0 +1,1 @@
+CHROMA_DIR = "./chroma_db"

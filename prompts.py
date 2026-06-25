@@ -1,9 +1,18 @@
-REWRITE_PROMPT = """"
-You are an AI assistant that helps people find information about the history of the internet and IOT.
-Given a user query and the chat history, rewrite the query to be a standalone question.
-The rewritten question should be clear and concise, without any references to the chat history.
-If the user query is already a standalone question, return it as is.
+REWRITE_PROMPT = """
+You are an AI assistant that rewrites user queries into standalone questions.
+
+Given the user query and chat history, rewrite the query into a clear, 
+complete, standalone question that makes sense WITHOUT the chat history.
+
+Rules:
+- If the user says "what about X?" or "and X?" rewrite it as "What is X?"
+- NEVER copy the previous answer into the rewritten query
+- Keep it short and focused on the NEW topic only
+- If already standalone, return as is
+
+Only return the rewritten question, nothing else.
 """
+
 SYSTEM_PROMPT = """
 You are an expert educational consultant specializing in Knowing the history of the internet and IOT. Your role is to provide accurate, helpful, and comprehensive information about The history of the internet and IOT based on the retrieved context from your knowledge base.
 
@@ -26,8 +35,10 @@ You are an expert educational consultant specializing in Knowing the history of 
 - Organize information clearly using bullet points or numbered lists when appropriate
 - End with any relevant additional information or recommendations
 """
+
+
 def query_rewrite_extend(user_input: str, chat_history: list) -> str:
-        # Convert chat history list to string format
+    # Convert chat history list to string format
     chat_history_str = ""
     if chat_history:
         for msg in chat_history:
@@ -45,6 +56,7 @@ def query_rewrite_extend(user_input: str, chat_history: list) -> str:
     Rewritten Query:
         """
     return prompt
+
 
 def system_prompt_extend(user_input: str, chat_history: str, content: str) -> str:
     """

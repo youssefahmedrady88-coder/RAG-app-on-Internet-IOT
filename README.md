@@ -31,14 +31,14 @@ User Query
      Final Answer
 ```
 
-**Stack:** LangGraph · LangChain · ChromaDB · Ollama · Streamlit
+**Stack:** LangGraph · LangChain · ChromaDB · Ollama · Gradio
 
 ---
 
 ## 📁 Project Structure
 
 ```
-├── app.py                     # Streamlit chat UI
+├── app.py                     # Gradio chat UI
 ├── workflow.py                # LangGraph pipeline graph
 ├── agents.py                  # Rewriter, Retriever, Response agents
 ├── models.py                  # LangGraph State definition
@@ -60,8 +60,8 @@ User Query
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://https://github.com/youssefahmedrady88-coder/RAG-app-on-Internet-IOT
+cd RAG-app-on-Internet-IOT
 ```
 
 ### 2. Install dependencies
@@ -83,10 +83,9 @@ This fetches Wikipedia articles on Internet History & IoT, embeds them using `no
 
 ### 5. Launch the app
 ```bash
-streamlit run app.py
+python app.py
 ```
-
----
+Then open http://127.0.0.1:7860 in your browser.
 
 ## 📚 Dataset
 
@@ -134,6 +133,6 @@ The `chroma_db/` directory is **excluded from this repository** (see `.gitignore
 
 ## 👤 Author
 
-**[Your Name]**  
-Practical Exam — NLP & LLM Systems  
-[Your Institution / Course Name]
+**[Youssef Ahmed]**  
+RAG app on The History of internet and IOT  
+[Wyise Diploma]
